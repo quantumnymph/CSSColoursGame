@@ -149,12 +149,31 @@ function prvaFunkcija(){
 }
 
 let correct = 0;
+let timeLeft = 141;
 
 function count(){
     correct++;
     $('#count').text('correct: ' + correct);
 }
 
+function endgme(){
+    $('form').css('display', 'none');
+    let per = correct * 100 / 141;
+    $('#endgame').text(`You've got ${correct} correct, thst's ${per}%`);
+}
+
+function timer() {
+    $('#start').css('display', 'none');
+    let interval = setInterval(function(){ 
+        $('#timer').text(timeLeft);
+        if (timeLeft == 0) {
+            clearInterval(interval);
+            endgme();
+        }
+        timeLeft--;
+
+    }, 1000);
+}
 $(document).ready(() => {
     prvaFunkcija();
 
@@ -181,6 +200,9 @@ $(document).ready(() => {
     
         // $('h1').css('color','green');
     
+    });
+    $('#start').click(() => {
+        timer();
     });
 });
 
