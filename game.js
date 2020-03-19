@@ -148,6 +148,13 @@ function prvaFunkcija(){
    
 }
 
+let correct = 0;
+
+function count(){
+    correct++;
+    $('#count').text('correct: ' + correct);
+}
+
 $(document).ready(() => {
     prvaFunkcija();
 
@@ -155,12 +162,19 @@ $(document).ready(() => {
         sta.preventDefault();
         let varijabla = $('#colorForm>input').val();
         varijabla = varijabla.toLowerCase()
-        if(colorDict[varijabla] != undefined){
+        if(colorDict[varijabla] == undefined){
+            console.log('ova boja ne postoji');
+        } 
+        else if (!colorDict[varijabla]) {
+            console.log('ova boja je iskoristena')
+        }
+        else {
             console.log(varijabla);
             $('h1').css('color',colorDict[varijabla]);
+            count();
+            colorDict[varijabla] = false;
             
         } 
-        else console.log('ova boja ne postoji');
         
         
         $('#colorForm>input').val('');
