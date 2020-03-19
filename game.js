@@ -153,7 +153,7 @@ let timeLeft = 141;
 
 function count(){
     correct++;
-    $('#count').text('correct: ' + correct);
+    //$('#count').text('correct: ' + correct);
 }
 
 function endgme(){
@@ -190,6 +190,10 @@ $(document).ready(() => {
         else {
             console.log(varijabla);
             $('h1').css('color',colorDict[varijabla]);
+            let currText = $('.usedcolors').html();
+            let newText = `<p class="usedColorP" style="color: ${colorDict[varijabla]}">${varijabla} ${colorDict[varijabla]}</p>`
+            newText += currText; 
+            $('.usedcolors').html(newText);
             count();
             colorDict[varijabla] = false;
             
