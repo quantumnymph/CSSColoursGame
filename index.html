@@ -1,62 +1,45 @@
 <head>
-<title>
-AwesomeColourGame
-</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="game.js"></script>
+    <title>TUTORIAL</title>
 <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
+
 <body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <div class="h1container">
         <h1>
         insane colour game!
         </h1>
     </div>
-    <div class = "timercontainer">
-            <h3 id="timer">141
-        </h3>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br> 
-    <svg viewBox="0 0 500 500"  style="display: none">
-            <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-            <text class="rainbow"  width="100%">
-                <textPath  xlink:href="#curve">
-                    CONGRATULATIONS!!! 
-                </textPath>
-            </text>
-        </svg>
-    <div class="formcontainer">
-        <form id="colorForm">
-            <input type="text">
-        </form>
-           <p id="endgame">
-        </p>
-        
-        <div class = "usedcolors">
-        </div>
-        <!--- <p id="count">
-        correct: 0
-        </p> -->
-        <div>
-            <button type="button" class="btn btn-secondary btn-lg" id="start">
-            start
-            </button>
-            <button type="button" class="btn btn-success btn-lg" id="zen">
-            zen
-            </button>  
-             <div id="zenendgame" style="display: block">
-        </div>      
-        </div>
-      
+    <p>
+Welcome to the insane colour game, where you learn CSS color names!
+<br>
+CSS has 141 colours pre-specified by name. How many can you name? Test your knowledge in one of the game modes below.
+<br>
+This is a website with all the colours, if you would like to prepare: <a href ="https://www.w3schools.com/cssref/css_colors.asp" target="_blank">https://www.w3schools.com/cssref/css_colors.asp</a>
+    </p>
 
+    <div class = "columnwrapper">
+        <div class = "columndiv">
+            <h1>CLASSIC</h1>
+            <p>In classic mode, you have 141 seconds to name as many of the 141 CSS colours as you can. The names have no spaces (e.g."hotpink")</p>
+            <buttontype="button" class="btn btn-success btn-lg" onclick="location.href='guessing.html';">PLAY</button>
+        </div>
+
+        <div class = "columndiv">
+            <h1>REVERSE</h1>
+            <p>In reverse mode, you are shown a colour and you have to write its CSS name. Careful! You only have one shot at each colour (And there is a timer). Good luck!</p>
+            <buttontype="button" class="btn btn-success btn-lg" >PRO</button>
+        </div>
     </div>
+    <p class = "credits"> credits: <a href = "https://github.com/quantumnymph" target="_blank">quantumnymph</a> & <a href = "https://github.com/mats01" target="_blank">mats01</a></p>
+
 </body>

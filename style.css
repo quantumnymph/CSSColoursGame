@@ -54,6 +54,7 @@ input[type="text"] {
 .btn{
     width: 100px;
     clear: both;
+    margin: auto;
 }
 
 #endgame { 
@@ -140,6 +141,34 @@ text{
      100%{fill: orange;}
  }
 
+
+
+
+
+
+
+
+.columnwrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.columndiv {
+    padding: 20px 60px;
+    text-align: justify;
+}
+
+.credits {
+    position: absolute;
+    bottom: 20px;
+}
+
+
+
+
+
+
 @media only screen and (max-width: 600px) {
 
     .formcontainer{
@@ -151,4 +180,12 @@ text{
     .timercontainer { 
         top: 80px;
     }
+    .columnwrapper {
+        flex-direction: column;
+    }
+    .credits {
+        position: relative;
+        margin-top: 20px;
+    }
+
 }
