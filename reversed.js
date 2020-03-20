@@ -144,12 +144,14 @@ let colorDict = {
 
 
 function prvaFunkcija(){
-   $('h1').css('color','red');
-   
+    $('h1').css('color','red');
+    
 }
 
 let correct = 0;
+let incorrect = 0;
 let timeLeft = 141;
+let currentcolor;
 
 function count(){
     correct++;
@@ -159,7 +161,7 @@ function count(){
 function endgme(){
     $('form').css('display', 'none');
     let per = correct * 100 / 141;
-    $('#endgame').text(`You've got ${correct} correct, thst's ${per}%`);
+    $('#endgame').text(`You opened ${correct+incorrect} colours and got ${correct} correct, that's ${per}% of all colours and an accuracy of ${correct * 100 / (correct+incorrect)}%`);
 }
 
 function zenendgame() {
@@ -182,39 +184,59 @@ function timer() {
 
     }, 1000);
 }
+
+
+function rectangle(){
+    arrayed = Object.keys(colorDict)
+    randomnumber = Math.floor(Math.random() * arrayed.length); 
+    currentcolor = arrayed[randomnumber]
+    $('#square').css('background-color', colorDict[currentcolor]);  
+    delete colorDict[currentcolor];
+
+}
+
+
 $(document).ready(() => {
     prvaFunkcija();
-
+    rectangle();
     $('#colorForm').submit((sta) => {
         sta.preventDefault();
         let varijabla = $('#colorForm>input').val();
-        varijabla = varijabla.toLowerCase()
-        if(colorDict[varijabla] == undefined){
-            console.log('ova boja ne postoji');
-        } 
-        else if (!colorDict[varijabla]) {
-            console.log('ova boja je iskoristena')
-        }
-        else {
-            console.log(varijabla);
-            $('h1').css('color',colorDict[varijabla]);
-            let currText = $('.usedcolors').html();
-            let newText = `<p class="usedColorP" style="color: ${colorDict[varijabla]}">${varijabla} ${colorDict[varijabla]}</p>`
-            newText += currText; 
-            $('.usedcolors').html(newText);
+        varijabla = varijabla.toLowerCase();
+        if (varijabla == currentcolor){
             count();
-            colorDict[varijabla] = false;
-            let imajos = false;
-            for (let i in colorDict) {
-                console.log(colorDict[i]);
-                if (colorDict[i]) {
-                    imajos = true;
-                }
-            }
-            if (imajos == false) {
-                zenendgame();
-            }
-        } 
+        }
+        else{
+            incorrect++;
+        }
+        rectangle();
+    
+        // if(colorDict[varijabla] == undefined){
+        //     console.log('ova boja ne postoji');
+        // } 
+        // else if (!colorDict[varijabla]) {
+        //     console.log('ova boja je iskoristena')
+        // }
+        // else {
+        //     console.log(varijabla);
+        //     $('h1').css('color',colorDict[varijabla]);
+        //     let currText = $('.usedcolors').html();
+        //     let newText = `<p class="usedColorP" style="color: ${colorDict[varijabla]}">${varijabla} ${colorDict[varijabla]}</p>`
+        //     newText += currText; 
+        //     $('.usedcolors').html(newText);
+        //     count();
+        //     colorDict[varijabla] = false;
+        //     let imajos = false;
+        //     for (let i in colorDict) {
+        //         console.log(colorDict[i]);
+        //         if (colorDict[i]) {
+        //             imajos = true;
+        //         }
+        //     }
+        //     if (imajos == false) {
+        //         zenendgame();
+        //     }
+        // } 
         
         
         $('#colorForm>input').val('');
