@@ -162,8 +162,14 @@ function endgme(){
     $('#endgame').text(`You've got ${correct} correct, thst's ${per}%`);
 }
 
+function zenendgame() {
+    $('form').css('display', 'none');   
+    $('svg').css('display', 'block');
+}
+
 function timer() {
     $('#start').css('display', 'none');
+    $('#zen').css('display', 'none');
     $('#colorForm').css('visibility', 'visible');
     let interval = setInterval(function(){ 
         $('#timer').text(timeLeft);
@@ -172,6 +178,7 @@ function timer() {
             endgme();
         }
         timeLeft--;
+    
 
     }, 1000);
 }
@@ -197,7 +204,16 @@ $(document).ready(() => {
             $('.usedcolors').html(newText);
             count();
             colorDict[varijabla] = false;
-            
+            let imajos = false;
+            for (let i in colorDict) {
+                console.log(colorDict[i]);
+                if (colorDict[i]) {
+                    imajos = true;
+                }
+            }
+            if (imajos == false) {
+                zenendgame();
+            }
         } 
         
         
@@ -208,6 +224,13 @@ $(document).ready(() => {
     });
     $('#start').click(() => {
         timer();
+    });
+    $('#zen').click(() => {
+        $('#timer').css('display', 'none');
+        $('#zen').css('display', 'none');
+        $('#start').css('display', 'none');
+        $('#colorForm').css('visibility', 'visible');
+
     });
 });
 

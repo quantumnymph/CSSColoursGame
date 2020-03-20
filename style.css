@@ -46,9 +46,14 @@ input[type="text"] {
 
 }
 
-.btn{
+#start{
     background-color: #111;
     color: white;
+}
+
+.btn{
+    width: 100px;
+    clear: both;
 }
 
 #endgame { 
@@ -58,6 +63,82 @@ input[type="text"] {
 .usedColorP {
     font-size: 1.6em;
 }
+
+svg{
+    margin-bottom: -100%;
+}
+
+path {
+    fill: transparent;
+}
+
+
+text{
+    font-size: 37;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    fill:white;
+}
+
+.rainbow {
+  
+    /* Font options */
+   font-family: 'Pacifico', cursive;
+   text-shadow: 2px 2px 4px #000000;
+   
+    /* Chrome, Safari, Opera */
+   -webkit-animation: rainbow 5s infinite; 
+   
+   /* Internet Explorer */
+   -ms-animation: rainbow 5s infinite;
+   
+   /* Standar Syntax */
+   animation: rainbow 5s infinite; 
+ }
+ 
+ /* Chrome, Safari, Opera */
+ @-webkit-keyframes rainbow{
+   0%{fill: orange;}	
+   10%{fill: purple;}	
+     20%{fill: red;}
+   30%{fill: CadetBlue;}
+     40%{fill: yellow;}
+   50%{fill: coral;}
+     60%{fill: green;}
+   70%{fill: cyan;}
+   80%{fill: DeepPink;}
+   90%{fill: DodgerBlue;}
+     100%{fill: orange;}
+ }
+ 
+ /* Internet Explorer */
+ @-ms-keyframes rainbow{
+    0%{fill: orange;}	
+   10%{fill: purple;}	
+     20%{fill: red;}
+   30%{fill: CadetBlue;}
+     40%{fill: yellow;}
+   50%{fill: coral;}
+     60%{fill: green;}
+   70%{fill: cyan;}
+   80%{fill: DeepPink;}
+   90%{fill: DodgerBlue;}
+     100%{fill: orange;}
+ }
+ 
+ /* Standar Syntax */
+ @keyframes rainbow{
+     0%{fill: orange;}	
+   10%{fill: purple;}	
+     20%{fill: red;}
+   30%{fill: CadetBlue;}
+     40%{fill: yellow;}
+   50%{fill: coral;}
+     60%{fill: green;}
+   70%{fill: cyan;}
+   80%{fill: DeepPink;}
+   90%{fill: DodgerBlue;}
+     100%{fill: orange;}
+ }
 
 @media only screen and (max-width: 600px) {
 
