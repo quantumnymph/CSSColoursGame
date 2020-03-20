@@ -164,6 +164,7 @@ function endgme(){
 
 function timer() {
     $('#start').css('display', 'none');
+    $('#colorForm').css('visibility', 'visible');
     let interval = setInterval(function(){ 
         $('#timer').text(timeLeft);
         if (timeLeft == 0) {

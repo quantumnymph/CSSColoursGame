@@ -35,7 +35,9 @@ body{
 
 #colorForm {
     width: 100%;
+    visibility: hidden;
 }
+
 input[type="text"] {
     width: 70%;
     font-size: 1.5em;
@@ -43,6 +45,7 @@ input[type="text"] {
     box-shadow: none;
 
 }
+
 .btn{
     background-color: #111;
     color: white;
