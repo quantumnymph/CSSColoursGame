@@ -149,7 +149,7 @@ function prvaFunkcija(){
 }
 
 let correct = 0;
-let timeLeft = 141;
+let timeLeft = 5;
 
 function count(){
     correct++;
@@ -157,9 +157,18 @@ function count(){
 }
 
 function endgme(){
-    $('form').css('display', 'none');
+    $('#colorForm').css('display', 'none');
     let per = correct * 100 / 141;
     $('#endgame').text(`You've got ${correct} correct, thst's ${per}%`);
+    $(".leaderboard").css('display', 'block');
+}
+
+function username(){
+    var name = $('#inputname>input[type="text"]').val();
+    $('#inputname').css('display', 'none');
+    $('#list').css('display', 'block');
+    alert(`${correct} ${name}`);
+
 }
 
 function zenendgame() {
@@ -184,7 +193,10 @@ function timer() {
 }
 $(document).ready(() => {
     prvaFunkcija();
-
+    $('#inputname').submit((sta) => {
+        sta.preventDefault();
+        username();
+    });
     $('#colorForm').submit((sta) => {
         sta.preventDefault();
         let varijabla = $('#colorForm>input').val();

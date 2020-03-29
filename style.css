@@ -1,6 +1,36 @@
+.leaderboard{
+    border: 1px solid green ;
+    background-color: bisque;
+    border-radius: 25px;
+    margin: auto;
+    width: 50%;
+    padding: 40px;
+    display: none;
+}
+
+nav ul{
+    height:200px; 
+    width:100%;
+    overflow:hidden; 
+    overflow-y:scroll;
+    list-style-type: upper-roman;
+    display: none;
+}
+
+p {
+    font-family: calibri;
+    font-size: large;
+}
+
+.tutorial {
+    margin-left: 35px;
+}
+
 body{
     padding: 10px 20px;
     height: 100vh;
+    background-color: cornsilk;
+    box-sizing: border-box;
 }
 
 .h1container{
@@ -9,6 +39,7 @@ body{
     left: 50px;
     top: 20px;
     font-family: 'Inconsolata', monospace;
+    color: red;
 
 }
 
@@ -155,7 +186,7 @@ text{
 }
 
 .columndiv {
-    padding: 20px 60px;
+    padding: 30px 160px 30px 40px;
     text-align: justify;
 }
 
