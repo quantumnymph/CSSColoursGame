@@ -163,13 +163,20 @@ function endgme(){
     $(".leaderboard").css('display', 'block');
 }
 
+
+
 function username(){
     var name = $('#inputname>input[type="text"]').val();
     $('#inputname').css('display', 'none');
     $('#list').css('display', 'block');
-    alert(`${correct} ${name}`);
+    sheetsDataGetter(name, correct);
+    
+
+    
 
 }
+
+
 
 function zenendgame() {
     $('form').css('display', 'none');   
