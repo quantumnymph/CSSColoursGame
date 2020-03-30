@@ -170,10 +170,7 @@ function username(){
     $('#inputname').css('display', 'none');
     $('#list').css('display', 'block');
     sheetsDataGetter(name, correct);
-    
-
-    
-
+    rankPlayers();
 }
 
 
