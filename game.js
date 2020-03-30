@@ -149,7 +149,7 @@ function prvaFunkcija(){
 }
 
 let correct = 0;
-let timeLeft = 5;
+let timeLeft = 141;
 
 function count(){
     correct++;
@@ -222,7 +222,6 @@ $(document).ready(() => {
             colorDict[varijabla] = false;
             let imajos = false;
             for (let i in colorDict) {
-                console.log(colorDict[i]);
                 if (colorDict[i]) {
                     imajos = true;
                 }
