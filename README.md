@@ -1,7 +1,7 @@
 # CSSColoursGame
 
 try the game at:
-https://quantumnymph.github.io/CSSColoursGame/
+https://csscolorgame.farmoredifferent.com/
 
 How to play:
 
