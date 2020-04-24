@@ -1,4 +1,4 @@
-let sheet = 'https://spreadsheets.google.com/feeds/cells/1Wsgbmbyn73_VU_swojLd2U0FYsgA7jL8vWUCg-lBQUw/1/public/full?alt=json';
+let sheet = 'https://spreadsheets.google.com/feeds/cells/1APl6bVl_C8r0g40i0EOqvV06XLSMbU2t1-YDg19LxJM/1/public/full?alt=json';
 
 class Players {
     constructor(ime, bodovi, current = false) {
@@ -19,6 +19,8 @@ function komparator(o1,o2) {
   }
 
 function rankPlayers(players){
+    console.log('stuf');
+
     players = players.sort(komparator);
     players = players.reverse();
     for (let i in players){ 
@@ -61,8 +63,8 @@ function sheetsDataGetter(novo_ime, novi_bodovi) {
 function sendToZapier(_ime, _bodovi) {
     try {
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://hooks.zapier.com/hooks/catch/7077566/o9uw3x2/");
-        xhr.send(JSON.stringify({ bodovi: _bodovi, ime: _ime }));
+        xhr.open("POST", `https://maker.ifttt.com/trigger/leaderboard/with/key/hXG5iV8pdCknUFmhFQEB070SqEVasyBgNeqEdUARt_p?value1=${_bodovi}&value2=${_ime}`);
+        xhr.send();
         console.log("Pushed to Zapier successfully!");
 
     } catch (e) {
